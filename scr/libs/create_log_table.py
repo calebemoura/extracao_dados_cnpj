@@ -1,7 +1,13 @@
-from schemas.bronze_schemas import *
+from databricks.sdk.runtime import dbutils
 
-def create_table(catalog: str, schema: str, table: str, spark):
-    struct = eval(table).jsonValue()
+import sys
+workspace = dbutils.widgets.get('workspace')
+sys.path.insert(0, f"{workspace}scr/")
+
+from schemas.log_schema import logs_extracao
+
+def create_table(spark, catalog: str, schema:str, table: str = 'log_extracao'):
+    struct = logs_extracao.jsonValue()
     column_type = ''
 
     # Verifica se a tabela existe
