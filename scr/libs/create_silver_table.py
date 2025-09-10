@@ -4,7 +4,7 @@ import sys
 workspace = dbutils.widgets.get('workspace')
 sys.path.insert(0, workspace)
 
-from schemas.bronze_schema import *
+from schemas.silver_schema import *
 
 def create_table(catalog: str, schema: str, table: str, spark):
     struct = eval(table).jsonValue()
@@ -12,8 +12,8 @@ def create_table(catalog: str, schema: str, table: str, spark):
 
     # Verifica se a tabela existe
     count = (spark.sql(f"SHOW TABLES FROM {catalog}.{schema}")
-         .where(f"database = '{schema}' AND tableName = '{table}'")         
-    ).count()
+            .where(f"database = '{schema}' AND tableName = '{table}'")         
+        ).count()
 
     if count > 0:
         print('Tabela já existe')
