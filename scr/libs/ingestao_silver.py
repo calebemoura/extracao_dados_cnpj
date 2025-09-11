@@ -1,3 +1,5 @@
+from databricks.sdk.runtime import dbutils
+
 import sys
 workspace = dbutils.widgets.get('workspace')
 sys.path.insert(0, workspace)

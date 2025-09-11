@@ -22,3 +22,4 @@ Projeto tem como objetivo automatizar à extração dos dados das empresas do Br
 Nesta primeira do projeto é realizar a solicitação ao site onde estão hospedados os arquivos que são disponibilizados pela receita federal, que são atualizados mensalmente, porém eles não são disponibilizados em dias fixos, então neste caso teremos que realizar uma verificação se os dados atualizados foram disponibilizados. E para isso usarei a biblioteca ``requestes`` que tem essa funcionalidade de usando o método ``get`` verifica qual o ``status_code`` da requisição e a partir realizar um ação.
 
 Tendo o ``status_code`` como ``200`` será necessário processar o ``HTML`` e extrair somente o necessário, que a pasta de arquivo mais atualizada, e para esse precessamento irei usar a biblioteca ``lxml``, que usando o ``XPATH`` para nevegar entre as hierarquias do ``HTML`` para extrair o que é necessario.
+
