@@ -29,13 +29,13 @@ Os arquivos baixados estão compactado no formato .zip, então urei usar outra b
 
 Mas ainda tem uma questão que está aberta. Os arquivos disponibilizados pela receita federal são atualizados mensalmente, e não tem um dia e hora determinado, para contar isso criei uma tabela de log, que armazena algumas informações e para controle, desta forma antes de executar o papiline realizo um select e verifico se a ultima pasta que está no site já foi baixada, e no job adiciono um tarefa de `if/else condition` se na consta no log, não executa o job, caso contrário executa o job completo
 
-![](https://github.com/calebemoura/extracao_dados_cnpj/blob/main/img/pipeline.png)
+![teste](https://github.com/calebemoura/extracao_dados_cnpj/blob/main/img/pipeline.png)
 
 ## Etapa 2
 
 Tendo os dados já baixados e descompactado agora é realizar a ingestão na arquitetura medalhão, que são divididas em camadas, é um padrão para organizar dados em ambientes de Data Lakehouse, especialmente no Databricks, utilizando camadas Bronze, Prata e Ouro para garantir qualidade e evolução incremental dos dados
 
-####Camadas da Arquitetura Medalhão
+#### Camadas da Arquitetura Medalhão
 **Bronze**: Dados brutos são armazenados sem filtros ou processamentos.
 
 - Serve como registro histórico e fonte de verdade.
