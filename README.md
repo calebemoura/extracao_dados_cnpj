@@ -17,7 +17,7 @@ Projeto tem como objetivo automatizar à extração dos dados das empresas do Br
 * Realizar a descompactação dos arquivos, pois em estão no formato .zip
 * Realizar um papiline da camada bronze e silver
 
-##Etapa 01
+## Etapa 01
 
 Nesta primeira do projeto é realizar a solicitação ao site onde estão hospedados os arquivos que são disponibilizados pela receita federal, que são atualizados mensalmente, porém eles não são disponibilizados em dias fixos, então neste caso teremos que realizar uma verificação se os dados atualizados foram disponibilizados. E para isso usarei a biblioteca ``requestes`` que tem essa funcionalidade de usando o método ``get`` verifica qual o ``status_code`` da requisição e a partir realizar um ação.
 
@@ -31,7 +31,7 @@ Mas ainda tem uma questão que está aberta. Os arquivos disponibilizados pela r
 
 ![](https://github.com/calebemoura/extracao_dados_cnpj/blob/main/img/pipeline.png)
 
-##Etapa 2
+## Etapa 2
 
 Tendo os dados já baixados e descompactado agora é realizar a ingestão na arquitetura medalhão, que são divididas em camadas, é um padrão para organizar dados em ambientes de Data Lakehouse, especialmente no Databricks, utilizando camadas Bronze, Prata e Ouro para garantir qualidade e evolução incremental dos dados
 
